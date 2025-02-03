@@ -15,5 +15,3 @@ This repository contains SQL Server scripts, labs, and projects from my **Databa
 ✅ Joins, Aggregations & Views  
 ✅ Stored Procedures & Triggers  
 ✅ Transactions & Backup Management  
-
-
