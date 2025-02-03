@@ -39,7 +39,7 @@ CREATE TABLE WorkOn
     W_PNO INT,                            -- Foreign Key
     PRIMARY KEY (W_SSN, W_PNO),
 );
-
+/********************************************************************************/
 
 -- Add a new column postal_code into the table of employee.
 ALTER TABLE Employee ADD Postal_Code INT;
