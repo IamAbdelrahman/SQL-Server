@@ -26,6 +26,7 @@ CREATE TABLE Department
     MGRSSN INT,                           -- Foreign Key
     MGRStartDate VARCHAR(10)
 );
+/********************************************************************************/
 
 --1) 
 GRANT SELECT ON TABLE Employee TO Ahmed;
