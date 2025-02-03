@@ -32,7 +32,7 @@ CREATE TABLE Projects
     PNO INT PRIMARY KEY, 
     P_Name VARCHAR(50) NOT NULL
 );
-
+/********************************************************************************/
 
 INSERT INTO Employee VALUES ('Asmaa', 'Ali', 102661, 
 '18-Oct-85', 'Cairo', 1200, NULL, 10);
