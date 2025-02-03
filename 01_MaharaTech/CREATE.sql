@@ -6,44 +6,40 @@
    3) Create Projects table with ProjectName, ProjectNumber PK
 */
 
--- Create the Department table
-CREATE TABLE Department
-(
-	D_Name varchar(10) NOT NULL,
-	DNO INT PRIMARY KEY,
-	MGRSSN INT
-	FOREIGN KEY (MGRSSN) REFERENCES Employee (SSN) ON DELETE SET NULL ON UPDATE CASCADE,
-	MGRStartDate varchar(10)
-);
-
 -- Create the Employee table
 CREATE TABLE Employee
 (
-	Fname varchar(10),
-	Lname varchar(10), 
-	SSN INT PRIMARY KEY, 
-	Bdate varchar(10),
-	City varchar(10), 
-	Salary float, 
-	SuperSSN INT, 
-	E_DNO INT 
-	FOREIGN KEY (E_DNO) REFERENCES Department (DNO) ON DELETE SET NULL ON UPDATE CASCADE
+    Fname VARCHAR(10),
+    Lname VARCHAR(10), 
+    SSN INT PRIMARY KEY, 
+    Bdate VARCHAR(10),
+    City VARCHAR(10), 
+    Salary FLOAT, 
+    SuperSSN INT,                         -- Foreign Key
+    E_DNO INT,                            -- Foreign Key
+);
+
+-- Create the Department table
+CREATE TABLE Department
+(
+    D_Name VARCHAR(10) NOT NULL,
+    DNO INT PRIMARY KEY,
+    MGRSSN INT,                           -- Foreign Key
+    MGRStartDate VARCHAR(10)
 );
 
 
 -- Create the Projects table
 CREATE TABLE Projects 
 (
-	PNO INT PRIMARY KEY, 
-	P_Name varchar(50) NOT NULL
+    PNO INT PRIMARY KEY, 
+    P_Name VARCHAR(50) NOT NULL
 );
 
-
--- Create the WorkOn table as Many Employees may work on many projects.
+-- Create the WorkOn table as Many Employees may work on many projects
 CREATE TABLE WorkOn
 (
-	W_SSN INT
-	FOREIGN KEY (W_SSN) REFERENCES Employee (SSN) ON DELETE CASCADE ON UPDATE CASCADE,
-	W_PNO INT
-	FOREIGN KEY (W_PNO) REFERENCES Projects (PNO) ON DELETE CASCADE ON UPDATE CASCADE
-)
+    W_SSN INT,                            -- Foreign Key
+    W_PNO INT,                            -- Foreign Key
+    PRIMARY KEY (W_SSN, W_PNO),
+);
